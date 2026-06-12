@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modern Quiz App</title>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- REGISTER -->
+<div class="card" id="registerPage">
+<h2>Create Account</h2>
+
+<input type="text" id="regUsername" placeholder="Username">
+
+<input type="password" id="regPassword" placeholder="Password">
+
+<button onclick="registerUser()">
+Register
+</button>
+
+<p>
+Already have an account?
+<a href="#" onclick="showLogin()">
+Login
+</a>
+</p>
+</div>
+
+<!-- LOGIN -->
+<div class="card hidden" id="loginPage">
+<h2>Login</h2>
+
+<input type="text" id="loginUsername" placeholder="Username">
+
+<input type="password" id="loginPassword" placeholder="Password">
+
+<button onclick="loginUser()">
+Login
+</button>
+
+<p>
+Need account?
+<a href="#" onclick="showRegister()">
+Register
+</a>
+</p>
+</div>
+
+<!-- QUIZ -->
+<div class="card hidden" id="quizPage">
+
+<div class="topbar">
+
+<h3 id="welcome"></h3>
+
+<button class="logout" onclick="logoutUser()">
+Logout
+</button>
+
+</div>
+
+<div id="progress"></div>
+
+<h2 id="question"></h2>
+
+<div id="answers"></div>
+
+<div class="controls">
+
+<button onclick="previousQuestion()">
+Previous
+</button>
+
+<button onclick="nextQuestion()">
+Next
+</button>
+
+</div>
+
+<button id="submitBtn"
+onclick="finishQuiz()">
+Submit Quiz
+</button>
+
+</div>
+
+<!-- RESULT -->
+
+<div class="card hidden" id="resultPage">
+
+<h2>Quiz Completed</h2>
+
+<h1 id="scoreText"></h1>
+
+<button onclick="restartQuiz()">
+Try Again
+</button>
+
+</div>
+
+<!-- LEADERBOARD -->
+
+<div class="card hidden" id="leaderboardPage">
+
+<h2>🏆 Top 10 Leaderboard</h2>
+
+<div id="leaderboard"></div>
+
+<button onclick="restartQuiz()">
+Play Again
+</button>
+
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
