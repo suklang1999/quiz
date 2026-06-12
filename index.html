@@ -1,120 +1,289 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Modern Quiz App</title>
+<title>Quiz Website</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+body{
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#667eea,#764ba2);
+    margin:0;
+    padding:20px;
+}
+
+.container{
+    max-width:900px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+h1{
+    text-align:center;
+    color:#333;
+}
+
+.question{
+    margin-bottom:25px;
+    padding:15px;
+    border-radius:10px;
+    background:#f5f5f5;
+}
+
+.question h3{
+    margin-top:0;
+}
+
+label{
+    display:block;
+    margin:8px 0;
+    cursor:pointer;
+}
+
+button{
+    display:block;
+    width:100%;
+    padding:15px;
+    background:#667eea;
+    color:white;
+    border:none;
+    border-radius:10px;
+    font-size:18px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#5563d6;
+}
+</style>
+
 </head>
 <body>
 
-<!-- REGISTER -->
-<div class="card" id="registerPage">
-<h2>Create Account</h2>
+<div class="container">
+<h1>General Knowledge Quiz (30 Questions)</h1>
 
-<input type="text" id="regUsername" placeholder="Username">
+<form>
 
-<input type="password" id="regPassword" placeholder="Password">
-
-<button onclick="registerUser()">
-Register
-</button>
-
-<p>
-Already have an account?
-<a href="#" onclick="showLogin()">
-Login
-</a>
-</p>
+<div class="question">
+<h3>1. Capital of India?</h3>
+<label><input type="radio" name="q1"> Delhi</label>
+<label><input type="radio" name="q1"> Mumbai</label>
+<label><input type="radio" name="q1"> Chennai</label>
 </div>
 
-<!-- LOGIN -->
-<div class="card hidden" id="loginPage">
-<h2>Login</h2>
-
-<input type="text" id="loginUsername" placeholder="Username">
-
-<input type="password" id="loginPassword" placeholder="Password">
-
-<button onclick="loginUser()">
-Login
-</button>
-
-<p>
-Need account?
-<a href="#" onclick="showRegister()">
-Register
-</a>
-</p>
+<div class="question">
+<h3>2. 5 + 5 = ?</h3>
+<label><input type="radio" name="q2"> 8</label>
+<label><input type="radio" name="q2"> 10</label>
+<label><input type="radio" name="q2"> 12</label>
 </div>
 
-<!-- QUIZ -->
-<div class="card hidden" id="quizPage">
-
-<div class="topbar">
-
-<h3 id="welcome"></h3>
-
-<button class="logout" onclick="logoutUser()">
-Logout
-</button>
-
+<div class="question">
+<h3>3. Largest planet?</h3>
+<label><input type="radio" name="q3"> Mars</label>
+<label><input type="radio" name="q3"> Jupiter</label>
+<label><input type="radio" name="q3"> Earth</label>
 </div>
 
-<div id="progress"></div>
-
-<h2 id="question"></h2>
-
-<div id="answers"></div>
-
-<div class="controls">
-
-<button onclick="previousQuestion()">
-Previous
-</button>
-
-<button onclick="nextQuestion()">
-Next
-</button>
-
+<div class="question">
+<h3>4. National bird of India?</h3>
+<label><input type="radio" name="q4"> Peacock</label>
+<label><input type="radio" name="q4"> Eagle</label>
+<label><input type="radio" name="q4"> Sparrow</label>
 </div>
 
-<button id="submitBtn"
-onclick="finishQuiz()">
-Submit Quiz
-</button>
-
+<div class="question">
+<h3>5. HTML stands for?</h3>
+<label><input type="radio" name="q5"> Hyper Text Markup Language</label>
+<label><input type="radio" name="q5"> High Transfer Machine Language</label>
+<label><input type="radio" name="q5"> Home Tool Markup Language</label>
 </div>
 
-<!-- RESULT -->
-
-<div class="card hidden" id="resultPage">
-
-<h2>Quiz Completed</h2>
-
-<h1 id="scoreText"></h1>
-
-<button onclick="restartQuiz()">
-Try Again
-</button>
-
+<div class="question">
+<h3>6. CSS is used for?</h3>
+<label><input type="radio" name="q6"> Styling</label>
+<label><input type="radio" name="q6"> Database</label>
+<label><input type="radio" name="q6"> Hosting</label>
 </div>
 
-<!-- LEADERBOARD -->
-
-<div class="card hidden" id="leaderboardPage">
-
-<h2>🏆 Top 10 Leaderboard</h2>
-
-<div id="leaderboard"></div>
-
-<button onclick="restartQuiz()">
-Play Again
-</button>
-
+<div class="question">
+<h3>7. JavaScript is mainly used for?</h3>
+<label><input type="radio" name="q7"> Interactivity</label>
+<label><input type="radio" name="q7"> Painting</label>
+<label><input type="radio" name="q7"> Printing</label>
 </div>
 
-<script src="app.js"></script>
+<div class="question">
+<h3>8. Which planet is known as the Red Planet?</h3>
+<label><input type="radio" name="q8"> Venus</label>
+<label><input type="radio" name="q8"> Mars</label>
+<label><input type="radio" name="q8"> Mercury</label>
+</div>
+
+<div class="question">
+<h3>9. 12 x 12 = ?</h3>
+<label><input type="radio" name="q9"> 124</label>
+<label><input type="radio" name="q9"> 144</label>
+<label><input type="radio" name="q9"> 154</label>
+</div>
+
+<div class="question">
+<h3>10. Largest ocean?</h3>
+<label><input type="radio" name="q10"> Pacific</label>
+<label><input type="radio" name="q10"> Atlantic</label>
+<label><input type="radio" name="q10"> Indian</label>
+</div>
+
+<div class="question">
+<h3>11. How many continents?</h3>
+<label><input type="radio" name="q11"> 5</label>
+<label><input type="radio" name="q11"> 7</label>
+<label><input type="radio" name="q11"> 8</label>
+</div>
+
+<div class="question">
+<h3>12. Fastest land animal?</h3>
+<label><input type="radio" name="q12"> Lion</label>
+<label><input type="radio" name="q12"> Cheetah</label>
+<label><input type="radio" name="q12"> Tiger</label>
+</div>
+
+<div class="question">
+<h3>13. Which gas do plants absorb?</h3>
+<label><input type="radio" name="q13"> Oxygen</label>
+<label><input type="radio" name="q13"> Carbon Dioxide</label>
+<label><input type="radio" name="q13"> Nitrogen</label>
+</div>
+
+<div class="question">
+<h3>14. Which is a programming language?</h3>
+<label><input type="radio" name="q14"> Java</label>
+<label><input type="radio" name="q14"> Chrome</label>
+<label><input type="radio" name="q14"> Windows</label>
+</div>
+
+<div class="question">
+<h3>15. Which country invented pizza?</h3>
+<label><input type="radio" name="q15"> Italy</label>
+<label><input type="radio" name="q15"> France</label>
+<label><input type="radio" name="q15"> India</label>
+</div>
+
+<div class="question">
+<h3>16. How many days in a year?</h3>
+<label><input type="radio" name="q16"> 365</label>
+<label><input type="radio" name="q16"> 300</label>
+<label><input type="radio" name="q16"> 400</label>
+</div>
+
+<div class="question">
+<h3>17. Which is not a browser?</h3>
+<label><input type="radio" name="q17"> Chrome</label>
+<label><input type="radio" name="q17"> Firefox</label>
+<label><input type="radio" name="q17"> Photoshop</label>
+</div>
+
+<div class="question">
+<h3>18. Which is a search engine?</h3>
+<label><input type="radio" name="q18"> Google</label>
+<label><input type="radio" name="q18"> Word</label>
+<label><input type="radio" name="q18"> Excel</label>
+</div>
+
+<div class="question">
+<h3>19. Which animal gives wool?</h3>
+<label><input type="radio" name="q19"> Sheep</label>
+<label><input type="radio" name="q19"> Cow</label>
+<label><input type="radio" name="q19"> Goat</label>
+</div>
+
+<div class="question">
+<h3>20. Which planet do we live on?</h3>
+<label><input type="radio" name="q20"> Earth</label>
+<label><input type="radio" name="q20"> Mars</label>
+<label><input type="radio" name="q20"> Saturn</label>
+</div>
+
+<div class="question">
+<h3>21. Largest mammal?</h3>
+<label><input type="radio" name="q21"> Elephant</label>
+<label><input type="radio" name="q21"> Blue Whale</label>
+<label><input type="radio" name="q21"> Rhino</label>
+</div>
+
+<div class="question">
+<h3>22. Which language is used for styling websites?</h3>
+<label><input type="radio" name="q22"> CSS</label>
+<label><input type="radio" name="q22"> HTML</label>
+<label><input type="radio" name="q22"> SQL</label>
+</div>
+
+<div class="question">
+<h3>23. What does CPU stand for?</h3>
+<label><input type="radio" name="q23"> Central Processing Unit</label>
+<label><input type="radio" name="q23"> Computer Power Unit</label>
+<label><input type="radio" name="q23"> Central Program Utility</label>
+</div>
+
+<div class="question">
+<h3>24. Which is the smallest prime number?</h3>
+<label><input type="radio" name="q24"> 1</label>
+<label><input type="radio" name="q24"> 2</label>
+<label><input type="radio" name="q24"> 3</label>
+</div>
+
+<div class="question">
+<h3>25. Which is a fruit?</h3>
+<label><input type="radio" name="q25"> Carrot</label>
+<label><input type="radio" name="q25"> Potato</label>
+<label><input type="radio" name="q25"> Apple</label>
+</div>
+
+<div class="question">
+<h3>26. How many hours in a day?</h3>
+<label><input type="radio" name="q26"> 24</label>
+<label><input type="radio" name="q26"> 12</label>
+<label><input type="radio" name="q26"> 36</label>
+</div>
+
+<div class="question">
+<h3>27. Which is a social media platform?</h3>
+<label><input type="radio" name="q27"> Instagram</label>
+<label><input type="radio" name="q27"> Windows</label>
+<label><input type="radio" name="q27"> Linux</label>
+</div>
+
+<div class="question">
+<h3>28. What color do you get by mixing red and blue?</h3>
+<label><input type="radio" name="q28"> Purple</label>
+<label><input type="radio" name="q28"> Green</label>
+<label><input type="radio" name="q28"> Orange</label>
+</div>
+
+<div class="question">
+<h3>29. Which is the largest country by area?</h3>
+<label><input type="radio" name="q29"> Russia</label>
+<label><input type="radio" name="q29"> India</label>
+<label><input type="radio" name="q29"> USA</label>
+</div>
+
+<div class="question">
+<h3>30. Which symbol is used for IDs in CSS?</h3>
+<label><input type="radio" name="q30"> .</label>
+<label><input type="radio" name="q30"> #</label>
+<label><input type="radio" name="q30"> *</label>
+</div>
+
+<button type="submit">Submit Quiz</button>
+
+</form>
+</div>
+
 </body>
 </html>
